@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./img/UnderWater-BG.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed; */
 }
 
 code {
