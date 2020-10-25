@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <Banner />
-        {/* <GroupBox />         */}
+        <GroupBox />        
       </div>
     );
   }
