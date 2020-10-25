@@ -12,7 +12,7 @@ class App extends Component {
           <Banner />
         </div>
         
-        <div>
+        <div className='flex'>
           <div>
             <GroupBox />
           </div>
