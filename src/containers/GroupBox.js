@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SearchBox from '../components/SearchBox';
-import Group from '../components/Group';
+//import Group from '../components/Group';
 import GroupList from '../components/GroupList';
 //import './App.css';
 
