@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import GroupBox from './GroupBox';
 import Banner from '../components/Banner';
+import LoginForm from '../components/LoginForm';
 
 class App extends Component {
   render() {
@@ -12,7 +13,12 @@ class App extends Component {
         </div>
         
         <div>
-          <GroupBox />   
+          <div>
+            <GroupBox />
+          </div>
+          <div>
+            <LoginForm />
+          </div>
         </div>     
       </div>
     );

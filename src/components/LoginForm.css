@@ -1,0 +1,7 @@
+.background {
+    padding:50px;
+    background: purple;
+}
+.vertical > form > div {
+    flex-direction: column;
+}
