@@ -7,9 +7,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Banner />
-        <div></div>
-        <GroupBox />        
+        <div>
+          <Banner />
+        </div>
+        
+        <div>
+          <GroupBox />   
+        </div>     
       </div>
     );
   }
