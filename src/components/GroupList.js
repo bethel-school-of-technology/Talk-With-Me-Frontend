@@ -1,21 +1,21 @@
 import React from 'react';
 import Group from './Group';
-import { groups } from '../dummyGroups';
+//import { groups } from '../dummyGroups';
 
-const GroupList = () => {
+const GroupList = ({ groups }) => {
     const groupComponent = groups.map((user, i) => {
         return (
-            <Group
-                id={groups[i]._id}
-                description={groups[0].about}
-            />
+                <Group
+                    id={groups[i]._id}
+                    description={groups[0].about}
+                />          
         );
     });
 
 
     return (
-        <div>
-            { groupComponent }
+        <div className='' style={{ overflowX: 'scroll', height: '400px'}}>
+            { groupComponent}
         </div>
     )
 }

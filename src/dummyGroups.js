@@ -1,4 +1,4 @@
-export const groups = [
+export const exportedgroups = [
     {
       "_id": 12,
       "index": 0,
