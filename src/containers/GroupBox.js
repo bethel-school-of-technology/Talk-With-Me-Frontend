@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import SearchBox from '../components/SearchBox';
+import SearchBox from '../Components/SearchBox';
 //import Group from '../components/Group';
-import GroupList from '../components/GroupList';
+import GroupList from '../Components/Group/GroupList';
 //import './App.css';
 import { exportedgroups } from '../dummyGroups';
 
