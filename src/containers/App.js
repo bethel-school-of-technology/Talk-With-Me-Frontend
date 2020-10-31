@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <HomePage />
+        <HomePage /> {/*  Homepage was moved to /Pages/HomePage.js  */}
       </div>
     );
   }
