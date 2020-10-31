@@ -21,7 +21,7 @@ var isLogin = 0;
                     <GroupBox />
                 </div>
 
-                <div>
+            <div>
                     
                     {
                         isLogin === 1

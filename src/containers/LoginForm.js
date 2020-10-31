@@ -5,7 +5,7 @@ import '../components/CSS/Form.css';
 
 const LoginForm = () => {
     return (
-        <div className='flexcontainer background vertical h-100'>
+        <div className='flexcontainer background vertical h-400'>
             <form action='//#region '>
                 <div>
                     <input type='text' className='pa1' placeholder='Username' />

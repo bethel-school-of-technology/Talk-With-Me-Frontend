@@ -4,4 +4,10 @@
 }
 .vertical > form > div {
     flex-direction: column;
+    padding-bottom: 32px;
+}
+
+.form-height {
+    /* height:400px; */
+    align-items:  stretch;
 }
