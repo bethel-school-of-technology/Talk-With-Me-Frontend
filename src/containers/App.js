@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import HomePage from '../Pages/HomePage';
+import Banner from '../components/Banner';
 
 // Containers should be capitalized
 
@@ -15,7 +16,15 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <HomePage /> {/*  Homepage was moved to /Pages/HomePage.js  */}
+        <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route path="/banner">
+            <Banner />
+          </Route>
+        </Switch>
+
         </div>
       </Router>
     );
