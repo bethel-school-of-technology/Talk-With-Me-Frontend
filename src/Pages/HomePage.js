@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Banner from '../Components/Banner';
 import GroupBox from '../Containers/GroupBox';
 import LoginForm from '../Containers/LoginForm';
@@ -17,9 +17,11 @@ export default function HomePage() {
                 <div>
                     <GroupBox />
                 </div>
+
                 <div>
                     <LoginForm />
                 </div>
+
             </div> 
         </div>
     )
