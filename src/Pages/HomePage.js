@@ -1,7 +1,7 @@
 import React from 'react';
-import Banner from '../Components/Banner';
-import GroupBox from '../Containers/GroupBox';
-import LoginForm from '../Containers/LoginForm';
+import Banner from '../components/Banner';
+import GroupBox from '../containers/GroupBox';
+import LoginForm from '../containers/LoginForm';
 
 // This is HomePage
 export default function HomePage() {
