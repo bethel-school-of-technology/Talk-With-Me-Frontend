@@ -3,7 +3,7 @@ import Banner from '../Components/Banner';
 import GroupBox from '../Containers/GroupBox';
 import LoginForm from '../Containers/LoginForm';
 
-
+// This is HomePage
 export default function HomePage() {
 
 

@@ -2,6 +2,7 @@ import React from 'react';
 import './CSS/Banner.css';
 
 
+// Basic Banner
 
 const Banner = () => {
     return (

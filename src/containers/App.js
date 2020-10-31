@@ -8,6 +8,7 @@ import {
 import './App.css';
 import HomePage from '../Pages/HomePage';
 
+// Containers should be capitalized
 
 class App extends Component {
   render() {
