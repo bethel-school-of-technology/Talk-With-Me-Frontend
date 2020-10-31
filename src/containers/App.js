@@ -13,9 +13,11 @@ import HomePage from '../Pages/HomePage';
 class App extends Component {
   render() {
     return (
+      <Router>
         <div className="App">
           <HomePage /> {/*  Homepage was moved to /Pages/HomePage.js  */}
         </div>
+      </Router>
     );
   }
 }

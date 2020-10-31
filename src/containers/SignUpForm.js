@@ -3,20 +3,23 @@ import '../components/CSS/Form.css';
 
 
 
-const LoginForm = () => {
+const SignUpForm = () => {
     return (
         <div className='flexcontainer background vertical h-100'>
             <form action='//#region '>
                 <div>
-                    <input type='text' className='pa1' placeholder='Username' />
+                    <input type='text' className='pa1' placeholder='Email' />
                 </div>
                 <div>
                     <input type='password' className='pa1' placeholder='Password' />
                 </div>
-                <button type='submit'>Submit</button>
+                <div>
+                    <input type='text' className='pa1' placeholder='Write a 20 page essay' />
+                </div>
+                <button type='submit'>Create Account</button>
             </form>
         </div>
     );
 }
 
-export default LoginForm;
+export default SignUpForm;
