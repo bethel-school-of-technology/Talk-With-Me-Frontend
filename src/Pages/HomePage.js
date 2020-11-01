@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Banner from '../components/Banner';
 import GroupBox from '../containers/GroupBox';
 import LoginForm from '../containers/LoginForm';
+import PostBox from '../containers/PostBox';
 import SignUpForm from '../containers/SignUpForm';
 
 
@@ -45,9 +46,13 @@ var isLogin = 0;
                     
                     
                     {/* <LoginForm /> */}
+
                 </div>
 
             </div> 
+            <div>
+                <PostBox />
+            </div>
         </div>
     )
 }

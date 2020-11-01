@@ -1,6 +1,6 @@
 import React from 'React';
 
-const CreatePostPage = () => {
+const RenameThis = () => {
     return(
         <div>
         </div>
@@ -11,4 +11,4 @@ const CreatePostPage = () => {
 
 
 
-export default CreatePostPage;
+export default RenameThis;
