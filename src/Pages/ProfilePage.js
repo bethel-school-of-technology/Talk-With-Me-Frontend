@@ -1,12 +1,13 @@
 import React from 'react';
 
 
+
 const ProfilePage = () => {
     return (
-        <div>
-            <h1>Tehee</h1>
+        <div className='flexcontainer background vertical h-400'>
+       
         </div>
-    )
+    );
 }
 
 export default ProfilePage;

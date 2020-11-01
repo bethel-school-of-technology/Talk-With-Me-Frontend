@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Banner from '../components/Banner';
 import {
   BrowserRouter as Router,
   Switch,
@@ -29,6 +30,7 @@ class App extends Component {
 
         </div>
       </Router>
+
     );
   }
 }

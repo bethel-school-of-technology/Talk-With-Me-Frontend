@@ -1,13 +1,12 @@
 import React from 'react';
 import '../components/CSS/Form.css';
-import '../Pages/ProfilePage';
-
+import ProfilePage from '../Pages/ProfilePage';
 
 
 const SignUpForm = () => {
     return (
-        <div className='flexcontainer background vertical h-400'>
-            <form action='//#region '>
+        <form className='flexcontainer background vertical h-400'>
+            <div>
                 <div>
                     <input type='text' className='pa1' placeholder='Email' required/>
                 </div>
