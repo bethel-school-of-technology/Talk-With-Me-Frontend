@@ -18,6 +18,7 @@ const SignUpForm = () => {
                     <input type='text' className='pa1' placeholder='Write a 20 page essay' required/>
                 </div>
                 <button onClick={() =>{ /*ProfilePage}*/}} type='submit'>Create Account</button>
+
             </form>
         </div>
     );
