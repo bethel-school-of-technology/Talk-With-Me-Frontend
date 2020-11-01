@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Banner from '../components/Banner';
 import GroupBox from '../containers/GroupBox';
 import LoginForm from '../containers/LoginForm';
@@ -9,6 +9,12 @@ import SignUpForm from '../containers/SignUpForm';
 // This is HomePage
 export default function HomePage() {
 
+    const [isSignedIn, setIsSignedIn] = useState(false);
+
+    const checkSignin = (status) => {
+
+    }
+
 var isLogin = 0;
     return (
         <div>
@@ -18,7 +24,7 @@ var isLogin = 0;
 
             <div className='flex'>
                 <div>
-                    <GroupBox />
+                    <GroupBox signInStatus={isSignedIn} />
                 </div>
 
             <div>

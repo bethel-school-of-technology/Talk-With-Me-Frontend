@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Banner from '../components/Banner';
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,10 +15,19 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
-          <HomePage /> {/*  Homepage was moved to /Pages/HomePage.js  */}
-        </div>
+        {/* <div className="App"> */}
+        <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route path="/banner">
+            <Banner />
+          </Route>
+        </Switch>
+
+        {/* </div> */}
       </Router>
+
     );
   }
 }
