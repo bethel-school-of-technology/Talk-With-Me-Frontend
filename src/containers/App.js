@@ -6,8 +6,10 @@ import {
   Link
 } from "react-router-dom";
 import './App.css';
+
 import HomePage from '../Pages/HomePage';
-import Banner from '../components/Banner';
+import Profile from '../Pages/ProfilePage';
+
 
 // Containers should be capitalized
 
@@ -20,8 +22,8 @@ class App extends Component {
           <Route exact path="/">
             <HomePage />
           </Route>
-          <Route path="/banner">
-            <Banner />
+          <Route exact path="/profile">
+            <Profile />
           </Route>
         </Switch>
 
