@@ -20,16 +20,18 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          {/* <Switch>
-          <Route exact path="/">
-            <HomePage />
-          </Route>
-          <Route exact path="/profile">
-            <Profile />
-          </Route>
-        </Switch> */}
-
-          <CreateGroup />
+          <Switch>
+            <Route exact path="/">
+              <HomePage />
+            </Route>
+            <Route exact path="/profile">
+              <Profile />
+            </Route>
+            <Route path="/creategroup">
+              <CreateGroup />
+            </Route>
+            <Route component={Error}></Route>
+          </Switch>
         </div>
       </Router>
 
