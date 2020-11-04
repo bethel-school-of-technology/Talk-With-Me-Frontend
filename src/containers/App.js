@@ -11,7 +11,7 @@ import './App.css';
 import CreateGroup from '../components/Group/CreateGroup'
 import HomePage from '../Pages/HomePage';
 import Profile from '../Pages/ProfilePage';
-
+import Error from '../Pages/404';
 
 // Containers should be capitalized
 
