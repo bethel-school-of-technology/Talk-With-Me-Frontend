@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Banner from '../components/Banner';
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,7 +6,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 
-import CreateGroup from '../components/Group/CreateGroup'
+import CreateGroupPage from '../Pages/CreateGroupPage';
 import HomePage from '../Pages/HomePage';
 import Profile from '../Pages/ProfilePage';
 import Error from '../Pages/404';
@@ -22,7 +21,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePage}></Route>
             <Route path="/profile" component={Profile}></Route>
-            <Route path="/creategroup" component={CreateGroup}></Route>
+            <Route path="/creategroup" component={CreateGroupPage}></Route>
             <Route component={Error}></Route>
           </Switch>
         </div>

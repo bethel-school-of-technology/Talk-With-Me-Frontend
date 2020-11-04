@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../components/CSS/Form.css';
 import ProfilePage from '../Pages/ProfilePage';
-
+import { Link } from 'react-router-dom';
 
 class SignUpForm extends React.Component {
     constructor(props) {
@@ -58,7 +58,7 @@ class SignUpForm extends React.Component {
                         <div>
                             <input type='text' className='pa1' placeholder='Write a 20 page essay' id='essay' required />
                         </div>
-                        <button onClick={() => { /*ProfilePage}*/ }} type='submit'>Create Account</button>
+                        <Link to='/profile'><button type='submit'>Create Account</button></Link>
                     </div>
                 </form>
             </div >
