@@ -3,8 +3,7 @@ import Banner from '../components/Banner';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import './App.css';
 
@@ -21,15 +20,9 @@ class App extends Component {
       <Router>
         <div className="App">
           <Switch>
-            <Route exact path="/">
-              <HomePage />
-            </Route>
-            <Route exact path="/profile">
-              <Profile />
-            </Route>
-            <Route path="/creategroup">
-              <CreateGroup />
-            </Route>
+            <Route exact path="/" component={HomePage}></Route>
+            <Route path="/profile" component={Profile}></Route>
+            <Route path="/creategroup" component={CreateGroup}></Route>
             <Route component={Error}></Route>
           </Switch>
         </div>
