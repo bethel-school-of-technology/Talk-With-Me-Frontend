@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Banner from '../components/Banner';
 import GroupBox from '../containers/GroupBox';
-import LoginForm from '../containers/LoginForm';
+import TheForm from '../containers/TheForm';
 import PostBox from '../containers/PostBox';
-import SignUpForm from '../containers/SignUpForm';
 
 
 
@@ -17,11 +16,12 @@ export default function HomePage() {
     }
     const increaseCount = (isTrue) => {
         if(isTrue){
-            setCount++;
+            setCount(1);
+            console.log(setCount);
             console.log('Increased Count');
         }
         else {
-            setCount = 0;
+            setCount(0);
             console.log('Set Count to 0');
         }
     }
@@ -39,16 +39,7 @@ export default function HomePage() {
 
                 <div>
 
-                    {
-                        count === 1 ? (
-                            <div>
-                                <LoginForm count={ increaseCount } />
-                            </div>
-                        ) : (
-                                <div>
-                                    <SignUpForm count={ increaseCount }/>
-                                </div>
-                            )}
+                    <TheForm count={increaseCount} count1={count} />
 
 
 

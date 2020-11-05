@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import '../components/CSS/Form.css';
-import ProfilePage from '../Pages/ProfilePage';
+import '../../components/CSS/Form.css';
 import { Link } from 'react-router-dom';
 
 class SignUpForm extends React.Component {
@@ -58,7 +57,6 @@ class SignUpForm extends React.Component {
                         <div>
                             <input type='text' className='pa1' placeholder='Write a 20 page essay' id='essay' required />
                         </div>
-                        {/* <Link to='/profile'><button type='submit'>Create Account</button></Link> */}
                         <button onClick={ () => this.props.count(true)} type='submit'>Create Account</button>
                     </div>
                 </form>
