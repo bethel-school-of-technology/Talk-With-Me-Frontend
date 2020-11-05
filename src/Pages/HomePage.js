@@ -11,12 +11,21 @@ import SignUpForm from '../containers/SignUpForm';
 export default function HomePage() {
 
     const [isSignedIn, setIsSignedIn] = useState(false);
-
+    const [count, setCount] = useState(0);
     const checkSignin = (status) => {
 
     }
+    const increaseCount = (isTrue) => {
+        if(isTrue){
+            setCount++;
+            console.log('Increased Count');
+        }
+        else {
+            setCount = 0;
+            console.log('Set Count to 0');
+        }
+    }
 
-var isLogin = 0;
     return (
         <div>
             <div>
@@ -28,28 +37,27 @@ var isLogin = 0;
                     <GroupBox signInStatus={isSignedIn} />
                 </div>
 
-            <div>
-                    
+                <div>
+
                     {
-                        isLogin === 1
-                        ? <div>
-                            <LoginForm />
-                        </div>
-                        : (
+                        count === 1 ? (
                             <div>
-                                <SignUpForm />
+                                <LoginForm count={ increaseCount } />
                             </div>
-                        )
-                }
-                    
-                    
-                    
-                    
+                        ) : (
+                                <div>
+                                    <SignUpForm count={ increaseCount }/>
+                                </div>
+                            )}
+
+
+
+
                     {/* <LoginForm /> */}
 
                 </div>
 
-            </div> 
+            </div>
             <div>
                 <PostBox />
             </div>

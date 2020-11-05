@@ -9,7 +9,7 @@ class SignUpForm extends React.Component {
         this.state = {
             email: '',
             password: '',
-            name: ''
+            name: '',
         }
     }
 
@@ -58,7 +58,8 @@ class SignUpForm extends React.Component {
                         <div>
                             <input type='text' className='pa1' placeholder='Write a 20 page essay' id='essay' required />
                         </div>
-                        <Link to='/profile'><button type='submit'>Create Account</button></Link>
+                        {/* <Link to='/profile'><button type='submit'>Create Account</button></Link> */}
+                        <button onClick={ () => this.props.count(true)} type='submit'>Create Account</button>
                     </div>
                 </form>
             </div >
