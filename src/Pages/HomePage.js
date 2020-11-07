@@ -20,7 +20,7 @@ var isLogin = 0;
     return (
         <div>
             <div>
-                <Banner />
+                <Banner title={"Home"}/>
             </div>
 
             <div className='flex'>

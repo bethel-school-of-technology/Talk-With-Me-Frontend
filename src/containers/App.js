@@ -11,7 +11,7 @@ import './App.css';
 import CreateGroup from '../components/Group/CreateGroup'
 import HomePage from '../Pages/HomePage';
 import Profile from '../Pages/ProfilePage';
-
+import GroupPage from './GroupPage'
 
 // Containers should be capitalized
 
@@ -29,7 +29,9 @@ class App extends Component {
           </Route>
         </Switch> */}
 
-          <CreateGroup />
+         {/* <CreateGroup /> */}
+
+         <GroupPage />
         </div>
       </Router>
 
