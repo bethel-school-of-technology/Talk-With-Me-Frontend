@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import Banner from '../components/Banner';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import './App.css';
 
-import CreateGroup from '../components/Group/CreateGroup'
+import CreateGroupPage from '../Pages/CreateGroupPage';
 import HomePage from '../Pages/HomePage';
 import Profile from '../Pages/ProfilePage';
 import GroupPage from './GroupPage'
+import Error from '../Pages/404';
+
 
 // Containers should be capitalized
 
