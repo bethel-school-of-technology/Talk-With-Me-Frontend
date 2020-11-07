@@ -29,7 +29,7 @@ export default function HomePage() {
     return (
         <div>
             <div>
-                <Banner />
+                <Banner title={"Home"}/>
             </div>
 
             <div className='flex'>
