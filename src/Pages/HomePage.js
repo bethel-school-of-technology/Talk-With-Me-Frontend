@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Banner from '../components/Banner';
 import PostsPage from '../components/Posts/PostsPage';
 import GroupBox from '../containers/GroupBox';
-import LoginForm from '../containers/LoginForm';
+import TheForm from '../containers/TheForm';
 import PostBox from '../containers/PostBox';
-import SignUpForm from '../containers/SignUpForm';
 
 
 
@@ -15,16 +14,26 @@ import SignUpForm from '../containers/SignUpForm';
 export default function HomePage() {
 
     const [isSignedIn, setIsSignedIn] = useState(false);
-
+    const [count, setCount] = useState(0);
     const checkSignin = (status) => {
 
     }
+    const increaseCount = (isTrue) => {
+        if(isTrue){
+            setCount(1);
+            console.log(setCount);
+            console.log('Increased Count');
+        }
+        else {
+            setCount(0);
+            console.log('Set Count to 0');
+        }
+    }
 
-    var isLogin = 0;
     return (
         <div>
             <div>
-                <Banner />
+                <Banner title={"Home"}/>
             </div>
 
             <div className='flex'>
@@ -34,25 +43,13 @@ export default function HomePage() {
 
                 <div>
 
-                    {
-                        isLogin === 1
-                            ? <div>
-                                <LoginForm />
-                            </div>
-                            : (
-                                <div>
-                                    <SignUpForm />
-                                </div>
-                            )
-                    }
-
+                    <TheForm count={increaseCount} count1={count} />
 
 
 
                     {/* <LoginForm /> */}
 
                 </div>
-                
             </div>
             <div>
                 <PostBox />
@@ -61,7 +58,7 @@ export default function HomePage() {
 
             </div>
 <div>
-                    <PostsPage/>
+                   
                 </div>
         </div>
     )

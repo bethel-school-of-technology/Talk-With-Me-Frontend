@@ -9,7 +9,10 @@ import './App.css';
 import CreateGroupPage from '../Pages/CreateGroupPage';
 import HomePage from '../Pages/HomePage';
 import Profile from '../Pages/ProfilePage';
+import GroupPage from './GroupPage'
 import Error from '../Pages/404';
+import Postspage from '../components/Posts/PostsPage'
+
 
 // Containers should be capitalized
 
@@ -18,14 +21,25 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Switch>
-            <Route exact path="/" component={HomePage}></Route>
-            <Route path="/profile" component={Profile}></Route>
-            <Route path="/creategroup" component={CreateGroupPage}></Route>
-            <Route component={Error}></Route>
-          </Switch>
+           <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route exact path="/profile">
+            <Profile />
+          </Route>
+        </Switch> 
+
+          {/* <CreateGroup /> */}
+
+         <GroupPage />
+         <div>
+           <Postspage/>
+         </div>
+
         </div>
       </Router>
+      
 
     );
   }
