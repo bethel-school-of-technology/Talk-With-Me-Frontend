@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Banner from '../components/Banner';
+import PostsPage from '../components/Posts/PostsPage';
 import GroupBox from '../containers/GroupBox';
 import LoginForm from '../containers/LoginForm';
 import PostBox from '../containers/PostBox';
 import SignUpForm from '../containers/SignUpForm';
+
+
+
 
 
 
@@ -16,7 +20,7 @@ export default function HomePage() {
 
     }
 
-var isLogin = 0;
+    var isLogin = 0;
     return (
         <div>
             <div>
@@ -28,31 +32,37 @@ var isLogin = 0;
                     <GroupBox signInStatus={isSignedIn} />
                 </div>
 
-            <div>
-                    
+                <div>
+
                     {
                         isLogin === 1
-                        ? <div>
-                            <LoginForm />
-                        </div>
-                        : (
-                            <div>
-                                <SignUpForm />
+                            ? <div>
+                                <LoginForm />
                             </div>
-                        )
-                }
-                    
-                    
-                    
-                    
+                            : (
+                                <div>
+                                    <SignUpForm />
+                                </div>
+                            )
+                    }
+
+
+
+
                     {/* <LoginForm /> */}
 
                 </div>
-
-            </div> 
+                
+            </div>
             <div>
                 <PostBox />
             </div>
+            <div>
+
+            </div>
+<div>
+                    <PostsPage/>
+                </div>
         </div>
     )
 }
