@@ -20,16 +20,16 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          {/* <Switch>
+          <Switch>
           <Route exact path="/">
             <HomePage />
           </Route>
           <Route exact path="/profile">
             <Profile />
           </Route>
-        </Switch> */}
+        </Switch>
 
-         {/* <CreateGroup /> */}
+         <CreateGroup />
 
          <GroupPage />
         </div>

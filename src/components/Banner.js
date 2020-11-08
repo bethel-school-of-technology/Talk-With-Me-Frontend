@@ -7,7 +7,7 @@ import './CSS/Banner.css';
 const Banner = ({ title }) => {
     return (
         <div>
-            <div className='banner'>{title}</div>
+            <div className='banner pa6'><span className='mt2 mb0 baskerville i fw1 f1'>{title}</span></div>
         </div>
     )
 }
