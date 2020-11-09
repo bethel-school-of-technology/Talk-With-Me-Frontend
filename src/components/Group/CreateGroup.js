@@ -17,24 +17,23 @@ class CreateGroup extends React.Component {
         this.setState({ description: event.target.value });
     }
 
-    // onSubmitCreate = () => {
-    //     fetch('http://localhost:3000/CreateGroup', {
-    //         method: 'post',
-    //         headers: { 'Content-Type': 'application/json' },
-    //         body: JSON.stringify({
-    //             email: this.state.email,
-    //             password: this.state.password,
-    //             name: this.state.name
-    //         })
-    //     })
-    //         .then(response => response.json())
-    //         .then(user => {
-    //             if (user) {
-    //                 this.props.loadUser(user);
-    //                 this.props.onRouteChage('home');
-    //             }
-    //         });
-    // }
+    onSubmitCreate = () => {
+        fetch('http://localhost:3000/groups/create_group', {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                name: this.state.name,
+                description: this.state.description
+            })
+        })
+            .then(response => response.json())
+            .then(group => {
+                if (group) {
+                    //this.props.loadUser(user);
+                    this.props.onRouteChange('home');
+                }
+            });
+    }
 
     render() {
         return (
