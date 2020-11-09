@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 
-import CreateGroupPage from '../Pages/CreateGroupPage';
+import CreateGroup from '../components/Group/CreateGroup';
 import HomePage from '../Pages/HomePage';
 import Profile from '../Pages/ProfilePage';
 import GroupPage from './GroupPage'
@@ -21,16 +21,16 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-           <Switch>
+          <Switch>
           <Route exact path="/">
             <HomePage />
           </Route>
           <Route exact path="/profile">
             <Profile />
           </Route>
-        </Switch> 
+        </Switch>
 
-          {/* <CreateGroup /> */}
+         <CreateGroup />
 
          <GroupPage />
          <div>
