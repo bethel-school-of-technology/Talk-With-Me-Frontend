@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class CreateGroup extends React.Component {
     constructor(props) {
@@ -70,12 +71,12 @@ class CreateGroup extends React.Component {
                                 type="submit"
                                 value="Create!"
                             />
-                            <input
+                            <Link to="/"><input
                                 onClick={this.onSubmitCreate}
                                 className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
                                 type="submit"
                                 value="Cancel"
-                            />
+                            /> </Link>
                         </div>
                     </div>
                 </main>

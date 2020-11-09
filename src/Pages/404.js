@@ -1,8 +1,12 @@
-import React from 'React';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const RenameThis = () => {
+
+const Error = () => {
     return(
         <div>
+            <h1>404 - Page not found</h1>
+            <Link to='/'><button>Back to Homepage</button></Link>
         </div>
     )
 }
@@ -11,4 +15,4 @@ const RenameThis = () => {
 
 
 
-export default RenameThis;
+export default Error;

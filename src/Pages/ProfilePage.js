@@ -1,7 +1,6 @@
 import React from 'react';
 
 
-
 /////outline of profile page////////////
 //                                   
 ////////////////////////////////////////

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Banner from '../components/Banner';
 import GroupBox from '../containers/GroupBox';
-import LoginForm from '../containers/LoginForm';
+import TheForm from '../containers/TheForm';
 import PostBox from '../containers/PostBox';
 import SignUpForm from '../containers/SignUpForm';
 import CreateGroup from '../components/Group/CreateGroup';
@@ -9,13 +9,25 @@ import ProfilePage from '../Pages/ProfilePage';
 
 
 
+
 // This is HomePage
 export default function HomePage() {
 
     const [isSignedIn, setIsSignedIn] = useState(false);
-
+    const [count, setCount] = useState(0);
     const checkSignin = (status) => {
 
+    }
+    const increaseCount = (isTrue) => {
+        if(isTrue){
+            setCount(1);
+            console.log(setCount);
+            console.log('Increased Count');
+        }
+        else {
+            setCount(0);
+            console.log('Set Count to 0');
+        }
     }
 
     const [route, setRoute] = useState('home');
@@ -69,6 +81,7 @@ export default function HomePage() {
 
             }
         </div >
+
     )
 }
 
