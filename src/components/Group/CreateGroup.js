@@ -30,7 +30,7 @@ class CreateGroup extends React.Component {
             .then(group => {
                 if (group) {
                     //this.props.loadUser(user);
-                    this.props.onRouteChange('home');
+                    this.props.onCreateGroup(group);
                 }
             });
     }
@@ -71,7 +71,7 @@ class CreateGroup extends React.Component {
                                 value="Create!"
                             />
                             <input
-                                onClick={this.onSubmitCreate}
+                                onClick={() => this.props.onRouteChange('home')}
                                 className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
                                 type="submit"
                                 value="Cancel"

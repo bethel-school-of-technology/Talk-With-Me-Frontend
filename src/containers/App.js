@@ -28,10 +28,6 @@ class App extends Component {
             <Profile />
           </Route>
         </Switch>
-
-         <CreateGroup />
-
-         <GroupPage />
         </div>
       </Router>
 
