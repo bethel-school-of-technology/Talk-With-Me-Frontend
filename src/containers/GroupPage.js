@@ -26,19 +26,21 @@ export default function GroupPage() {
             </div>
 
             <div className='flex'>
-                <div>
+                <div className='w-20'>
                     <NavBar onRouteChage={onRouteChage} />
                 </div>
                 {route === 'welcome'
-                    ? <div>
+                    ? <div className='w-80'>
                         <WelcomePage />
                     </div>
+
 
                     : <div>
                         <GroupPosts />
                         <GroupPosts />
                         <GroupPosts />
                         <GroupPosts />
+
                     </div>
                 }
             </div>

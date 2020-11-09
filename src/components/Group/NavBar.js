@@ -6,8 +6,8 @@ export default function Navbar({ onRouteChage }) {
 
     return (
         <div className="pointer">
-            <p onClick={() => onRouteChage('welcome')}>Welcome</p>
-            <p onClick={() => onRouteChage('posts')}>Posts</p>
+            <p className='pa2' onClick={() => onRouteChage('welcome')}>Welcome</p>
+            <p className='pa2' onClick={() => onRouteChage('posts')}>Posts</p>
         </div>
     )
 }
