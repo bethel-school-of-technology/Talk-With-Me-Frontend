@@ -5,7 +5,7 @@ import React from 'react';
 export default function WelcomePage() {
 
     return (
-        <div class="vh-100 dt w-100 tc bg-dark-gray white cover" style={{}}>
+        <div class="vh-100 dt w-100 bg-dark-gray white cover" >
             <div class="dtc v-mid">
                 <header class="white-70">
                     <h2 class="f6 fw1 ttu tracked mb2 lh-title">Issue Six</h2>

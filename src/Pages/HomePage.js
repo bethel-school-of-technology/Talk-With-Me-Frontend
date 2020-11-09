@@ -4,6 +4,10 @@ import PostsPage from '../components/Posts/PostsPage';
 import GroupBox from '../containers/GroupBox';
 import TheForm from '../containers/TheForm';
 import PostBox from '../containers/PostBox';
+import SignUpForm from '../containers/SignUpForm';
+import CreateGroup from '../components/Group/CreateGroup';
+import ProfilePage from '../Pages/ProfilePage';
+
 
 
 
@@ -30,37 +34,58 @@ export default function HomePage() {
         }
     }
 
+    const [route, setRoute] = useState('home');
+
+    //
+    const onRouteChange = (currentRoute) => {
+        setRoute(currentRoute);
+    }
+
+    var isLogin = 0;
     return (
         <div>
-            <div>
-                <Banner title={"Home"}/>
-            </div>
 
-            <div className='flex'>
-                <div>
-                    <GroupBox signInStatus={isSignedIn} />
-                </div>
+            { route === 'home'
+                ? (
+                    <div className='Home'>
+                        <div>
+                            <Banner title={"Home"} />
+                        </div>
+                        <div className='flex'>
+                            <div>
+                                <GroupBox signInStatus={isSignedIn} />
+                            </div>
+                            <div>
+                                {/* {
+                                    isLogin === 1
+                                        ? <div>
+                                            <LoginForm />
+                                        </div>
+                                        : (
+                                            <div>
+                                                <SignUpForm />
+                                            </div>
+                                        )
+                                } */}
+                                <ProfilePage onRouteChange={onRouteChange}/>
+                            </div>
+                        </div>
+                        <div>
+                            <PostBox />
+                        </div>
+                    </div>
+                )
+                : (
 
-                <div>
+                    route === 'create_group'
+                        ? <CreateGroup onRouteChange={onRouteChange}/>
+                        : <ProfilePage />
+                )
 
-                    <TheForm count={increaseCount} count1={count} />
 
+            }
+        </div >
 
-
-                    {/* <LoginForm /> */}
-
-                </div>
-            </div>
-            <div>
-                <PostBox />
-            </div>
-            <div>
-
-            </div>
-<div>
-                   
-                </div>
-        </div>
     )
 }
 

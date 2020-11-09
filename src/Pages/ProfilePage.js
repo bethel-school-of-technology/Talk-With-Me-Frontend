@@ -1,11 +1,14 @@
 import React from 'react';
 
 
-const ProfilePage = () => {
-    return (
-        <div className='flexcontainer background fl w-100 vertical h-400'>
+/////outline of profile page////////////
+//                                   
+////////////////////////////////////////
 
-        
+const ProfilePage = ({ onRouteChange }) => {
+    return (
+        <div className='flexcontainer background vertical h-400'>
+            <button onClick={() => onRouteChange('create_group')} pointer>Create a Group!</button>
         </div>
     );
 }
