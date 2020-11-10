@@ -30,12 +30,15 @@ export default function GroupPage() {
 
             <div className='flex'>
                 <div className='w-20'>
+
                     <NavBar onRouteChange={onRouteChange} />
+
                 </div>
                 {route === 'welcome'
                     ? <div className='w-80'>
                         <WelcomePage />
                     </div>
+
 
                     : ( route === 'Create Post'
                     ?<div className='w-80'><CreatePost/></div>
@@ -54,7 +57,8 @@ export default function GroupPage() {
 
 
 
-                }
+
+                
                 <div>
 
                     <div>
