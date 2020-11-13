@@ -23,7 +23,9 @@ export default function HomePage() {
     const onCreateGroup = (group) => {
         setGroupInfo({
             name: group.name,
-            description: group.description
+            description: group.description,
+            likes: 0,
+            members: 1
         });
         setRoute('group_page');
     }

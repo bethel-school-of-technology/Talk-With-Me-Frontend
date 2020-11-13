@@ -23,14 +23,18 @@ class CreateGroup extends React.Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 name: this.state.name,
-                description: this.state.description
+                description: this.state.description,
+                members: 1,
+                likes: 0
             })
         })
             .then(response => response.json())
             .then(group => {
                 if (group) {
                     //this.props.loadUser(user);
+                    console.log('this is what Im working on' + group.name);
                     this.props.onCreateGroup(group);
+
                 }
             });
     }
@@ -50,6 +54,7 @@ class CreateGroup extends React.Component {
                                     name="name"
                                     id="name"
                                     onChange={this.onNameChange}
+                                    required
                                 />
                             </div>
                             <div className="mt3">
@@ -60,6 +65,7 @@ class CreateGroup extends React.Component {
                                     name="description"
                                     id="description"
                                     onChange={this.onDescriptionChange}
+                                    required
                                 />
                             </div>
                         </fieldset>
