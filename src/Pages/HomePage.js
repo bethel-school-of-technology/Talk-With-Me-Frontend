@@ -8,7 +8,7 @@ import PostBox from '../containers/PostBox';
 /* import SignUpForm from '../containers/SignUpForm'; */
 import CreateGroup from '../components/Group/CreateGroup';
 import ProfilePage from '../Pages/ProfilePage';
-
+import GroupPage from '../containers/GroupPage';
 
 
 
@@ -19,7 +19,10 @@ import ProfilePage from '../Pages/ProfilePage';
 export default function HomePage() {
 
     const [isSignedIn, setIsSignedIn] = useState(false);
+    const [groupInfo, setGroupInfo] = useState({});
+    const [route, setRoute] = useState('home');
     const [count, setCount] = useState(0);
+
     const checkSignin = (status) => {
 
     }
@@ -35,7 +38,17 @@ export default function HomePage() {
         }
     }
 
-    const [route, setRoute] = useState('home');
+    const onCreateGroup = (group) => {
+        setGroupInfo({
+            name: group.name,
+            description: group.description,
+            likes: 0,
+            members: 1
+        });
+        setRoute('group_page');
+    }
+
+    
 
     //
     const onRouteChange = (currentRoute) => {
@@ -79,8 +92,8 @@ export default function HomePage() {
                 : (
 
                     route === 'create_group'
-                        ? <CreateGroup onRouteChange={onRouteChange}/>
-                        : <ProfilePage />
+                        ? <CreateGroup onRouteChange={onRouteChange} onCreateGroup={onCreateGroup}/>
+                        : <GroupPage />
                 )
 
 
