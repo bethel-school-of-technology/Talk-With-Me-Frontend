@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class CreateGroup extends React.Component {
     constructor(props) {
         super(props);
@@ -78,10 +79,11 @@ class CreateGroup extends React.Component {
                             />
                             <input
                                 onClick={() => this.props.onRouteChange('home')}
+
                                 className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
                                 type="submit"
                                 value="Cancel"
-                            />
+                            /> 
                         </div>
                     </div>
                 </main>

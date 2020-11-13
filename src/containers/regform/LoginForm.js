@@ -1,9 +1,9 @@
 import React from 'react';
-import '../components/CSS/Form.css';
+import '../../components/CSS/Form.css';
 
 
 
-const LoginForm = () => {
+const LoginForm = ({ count }) => {
     return (
         <div className='flexcontainer background vertical h-400'>
             <form action='//#region '>
@@ -13,7 +13,7 @@ const LoginForm = () => {
                 <div>
                     <input type='password' className='pa1' placeholder='Password' />
                 </div>
-                <button type='submit'>Submit</button>
+                <button onClick={ () => count (false) } type='submit'>Submit</button>
             </form>
         </div>
     );

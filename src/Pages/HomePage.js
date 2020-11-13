@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import Banner from '../components/Banner';
+import PostsPage from '../components/Posts/PostsPage';
 import GroupBox from '../containers/GroupBox';
-import LoginForm from '../containers/LoginForm';
+import TheForm from '../containers/TheForm';
 import PostBox from '../containers/PostBox';
-import SignUpForm from '../containers/SignUpForm';
+//caused error. Commented out so that application could be run
+/* import SignUpForm from '../containers/SignUpForm'; */
 import CreateGroup from '../components/Group/CreateGroup';
 import ProfilePage from '../Pages/ProfilePage';
 import GroupPage from '../containers/GroupPage';
+
+
+
+
 
 
 // This is HomePage
@@ -15,9 +21,21 @@ export default function HomePage() {
     const [isSignedIn, setIsSignedIn] = useState(false);
     const [groupInfo, setGroupInfo] = useState({});
     const [route, setRoute] = useState('home');
+    const [count, setCount] = useState(0);
 
     const checkSignin = (status) => {
 
+    }
+    const increaseCount = (isTrue) => {
+        if(isTrue){
+            setCount(1);
+            console.log(setCount);
+            console.log('Increased Count');
+        }
+        else {
+            setCount(0);
+            console.log('Set Count to 0');
+        }
     }
 
     const onCreateGroup = (group) => {
@@ -81,6 +99,7 @@ export default function HomePage() {
 
             }
         </div >
+
     )
 }
 

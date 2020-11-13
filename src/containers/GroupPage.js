@@ -3,6 +3,10 @@ import Banner from '../components/Banner';
 import PostBox from '../containers/PostBox';
 import WelcomePage from '../components/Group/WelcomePage';
 import NavBar from '../components/Group/NavBar';
+import GroupPosts from '../components/Posts/GroupPosts';
+import Group from '../components/Group/Group';
+import CreateGroup from '../components/Group/CreateGroup';
+import CreatePost from '../components/Posts/CreatPosts';
 
 
 
@@ -12,7 +16,7 @@ export default function GroupPage() {
 
     const [route, setRoute] = useState('welcome');
 
-    const onRouteChage = (currentRoute) => {
+    const onRouteChange = (currentRoute) => {
         setRoute(currentRoute);
     }
 
@@ -26,17 +30,41 @@ export default function GroupPage() {
 
             <div className='flex'>
                 <div className='w-20'>
-                    <NavBar onRouteChage={onRouteChage} />
+
+                    <NavBar onRouteChange={onRouteChange} />
+
                 </div>
                 {route === 'welcome'
                     ? <div className='w-80'>
                         <WelcomePage />
                     </div>
 
-                    : <div className='w-80'>
-                        <PostBox />
+
+                    : ( route === 'Create Post'
+                    ?<div className='w-80'><CreatePost/></div>
+                    : <div>
+
+                            <GroupPosts />
+                            <GroupPosts />
+                            <GroupPosts />
+                            <GroupPosts />
+
+                        </div>)
+
+
+
+
+
+
+
+    
+})
+                <div>
+
+                    <div>
+
                     </div>
-                }
+                </div>
             </div>
         </div>
     )
