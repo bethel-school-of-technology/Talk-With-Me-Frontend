@@ -34,15 +34,6 @@ class App extends Component {
 
 
         </Switch>
-
-         <CreateGroup />
-
-
-         <GroupPage />
-         <div>
-           <Postspage/>
-         </div>
-
         </div>
       </Router>
       
