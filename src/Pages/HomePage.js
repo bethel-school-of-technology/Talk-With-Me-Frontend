@@ -4,7 +4,6 @@ import PostsPage from '../components/Posts/PostsPage';
 import GroupBox from '../containers/GroupBox';
 import TheForm from '../containers/TheForm';
 import PostBox from '../containers/PostBox';
-//caused error. Commented out so that application could be run
 /* import SignUpForm from '../containers/SignUpForm'; */
 import CreateGroup from '../components/Group/CreateGroup';
 import ProfilePage from '../Pages/ProfilePage';
