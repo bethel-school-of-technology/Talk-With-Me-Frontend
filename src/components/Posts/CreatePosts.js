@@ -1,41 +1,42 @@
-import React from 'react';
+
+import React, { Component } from 'react';
 
 
-class CreateGroup extends React.Component {
+class CreatePost extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: '',
-            description: ''
+            title: '',
+            body: ''
         }
     }
 
-    onNameChange = (event) => {
-        this.setState({ name: event.target.value })
+    onTitleChange = (event) => {
+        this.setState({ title: event.target.value })
     }
 
-    onDescriptionChange = (event) => {
-        this.setState({ description: event.target.value });
+    onBodyChange = (event) => {
+        this.setState({ body: event.target.value });
     }
 
-    onSubmitCreate = () => {
-        fetch('http://localhost:3000/groups/create_group', {
+    onPostCreate = () => {
+        fetch('http://localhost:3000/Posts/create_post', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                name: this.state.name,
-                description: this.state.description
+                title: this.state.title,
+                body: this.state.body
             })
-            
         })
             .then(response => response.json())
-            .then(group => {
-                if (group) {
+            .then(post => {
+                if (post) {
                     //this.props.loadUser(user);
                     this.props.onRouteChange('home');
                 }
             });
     }
+    //Need to create a Route Change for the Cancel button.
 
     render() {
         return (
@@ -43,41 +44,40 @@ class CreateGroup extends React.Component {
                 <main className="pa4 black-80">
                     <div className="measure">
                         <fieldset id="create_group" className="ba b--transparent ph0 mh0">
-                            <legend className="f1 fw6 ph0 mh0">Create a Group</legend>
+                            <legend className="f1 fw6 ph0 mh0">Create a Post</legend>
                             <div className="mt3">
-                                <label className="db fw6 lh-copy f6" htmlFor="name">Name</label>
+                                <label className="db fw6 lh-copy f6" htmlFor="title">Title</label>
                                 <input
                                     className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                                     type="text"
-                                    name="name"
-                                    id="name"
-                                    onChange={this.onNameChange}
+                                    name="Title"
+                                    id="Title"
+                                    onChange={this.onTitleChange}
                                 />
                             </div>
                             <div className="mt3">
-                                <label className="db fw6 lh-copy f6" htmlFor="description">Description</label>
+                                <label className="db fw6 lh-copy f6" htmlFor="body">Post Something</label>
                                 <input
                                     className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
                                     type="text"
-                                    name="description"
-                                    id="description"
-                                    onChange={this.onDescriptionChange}
-                                />
+                                    name="body"
+                                    id="body"
+                                    onChange={this.onBodyChange} />
                             </div>
                         </fieldset>
-                        <div className="createGroup">
+                        <div className="creatPost">
                             <input
-                                onClick={this.onSubmitCreate}
+                                onClick={this.onPostCreate} 
                                 className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
                                 type="submit"
                                 value="Create!"
                             />
-                           <input
-                                onClick={this.onSubmitCreate}
+                            <input
+                                onClick={'group page'}
                                 className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
                                 type="submit"
                                 value="Cancel"
-                            /> 
+                            />
                         </div>
                     </div>
                 </main>
@@ -86,4 +86,5 @@ class CreateGroup extends React.Component {
     }
 }
 
-export default CreateGroup;
+
+export default CreatePost;

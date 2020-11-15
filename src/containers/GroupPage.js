@@ -6,7 +6,7 @@ import NavBar from '../components/Group/NavBar';
 import GroupPosts from '../components/Posts/GroupPosts';
 import Group from '../components/Group/Group';
 import CreateGroup from '../components/Group/CreateGroup';
-import CreatePost from '../components/Posts/CreatPosts';
+import CreatePost from '../components/Posts/CreatePosts';
 
 
 
@@ -18,8 +18,9 @@ export default function GroupPage() {
 
     const onRouteChange = (currentRoute) => {
         setRoute(currentRoute);
-    }
 
+    }
+ 
 
     return (
         <div>
@@ -41,7 +42,7 @@ export default function GroupPage() {
 
 
                     : ( route === 'Create Post'
-                    ?<div className='w-80'><CreatePost/></div>
+                    ?<div className='w-80'><CreatePost onRouteChange={onRouteChange} /></div>
                     : <div>
 
                             <GroupPosts />
@@ -56,7 +57,7 @@ export default function GroupPage() {
 
 
 
-
+})
 
                 
                 <div>
