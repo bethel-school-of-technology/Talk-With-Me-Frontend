@@ -17,6 +17,7 @@ import Postspage from '../components/Posts/PostsPage'
 // Containers should be capitalized
 
 class App extends Component {
+
   render() {
     return (
       <Router>

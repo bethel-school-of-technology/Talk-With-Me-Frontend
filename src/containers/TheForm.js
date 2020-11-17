@@ -4,17 +4,17 @@ import LoginForm from './regform/LoginForm';
 
 
 
-const TheForm = ({ count, count1 }) => {
+const TheForm = () => {
     return (
-        count1 === 1 ? (
+        <div>
             <div>
-                <LoginForm count={count} />
+                <LoginForm />
             </div>
-        ) : (
-                <div>
-                    <SignUpForm count={count} />
-                </div>
-            )
+
+            <div>
+                <SignUpForm />
+            </div>
+        </div>
     )
 }
 
