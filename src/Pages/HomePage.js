@@ -54,8 +54,7 @@ export default function HomePage() {
     const onRouteChange = (currentRoute) => {
         setRoute(currentRoute);
     }
-
-    var isLogin = 0;
+    
     return (
         <div>
 
@@ -64,23 +63,13 @@ export default function HomePage() {
                     <div className='Home'>
                         <div>
                             <Banner title={"Home"} />
+                            <TheForm />
                         </div>
                         <div className='flex'>
                             <div>
                                 <GroupBox signInStatus={isSignedIn} />
                             </div>
                             <div>
-                                {/* {
-                                    isLogin === 1
-                                        ? <div>
-                                            <LoginForm />
-                                        </div>
-                                        : (
-                                            <div>
-                                                <SignUpForm />
-                                            </div>
-                                        )
-                                } */}
                                 <ProfilePage onRouteChange={onRouteChange}/>
                             </div>
                         </div>
