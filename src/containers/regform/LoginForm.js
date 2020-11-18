@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../../components/CSS/Form.css';
 
 class LoginForm extends React.Component {
@@ -19,6 +19,7 @@ class LoginForm extends React.Component {
     }
 
     onSubmitSignIn = () => {
+        console.log('Section #1');
         fetch('http://localhost:3000/signin', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
@@ -27,10 +28,14 @@ class LoginForm extends React.Component {
                 password: this.state.password
             })
         })
-            .then(response => response.json())
+            .then(response => {response.json(); console.log('Section #2');})
             .then(user => {
-                if (user) {
-                    console.log(this.state);
+                console.log('Section #3');
+                console.log(user);
+                if (user.id) {
+                    console.log('Section #4');
+                    this.loadUser(user)
+                    // this.props.onRouteChange('/');
                 }
             })
     }

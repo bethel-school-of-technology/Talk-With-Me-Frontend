@@ -17,6 +17,25 @@ import Postspage from '../components/Posts/PostsPage'
 // Containers should be capitalized
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isSignedIn: false,
+      email: '',
+      password: ''
+    }
+  }
+
+  loadUser = (data) => {
+    this.setState({
+      user: {
+        firstname: data.firstname,
+        lastname: data.lastname,
+        email: data.email,
+        password: data.password
+      }
+    })
+  }
 
   render() {
     return (
