@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../../components/CSS/Form.css';
 
 class SignUpForm extends React.Component {
@@ -26,7 +26,6 @@ class SignUpForm extends React.Component {
     }
 
     onSubmitSignIn = () => {
-        console.log(this.state);
         fetch('http://localhost:3000/register', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
