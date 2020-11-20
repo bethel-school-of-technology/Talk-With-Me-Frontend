@@ -13,7 +13,12 @@ import GroupPage from '../containers/GroupPage';
 export default function HomePage() {
 
     const [isSignedIn, setIsSignedIn] = useState(false);
-    const [groupInfo, setGroupInfo] = useState({});
+    const [groupInfo, setGroupInfo] = useState({
+        name: '',
+        description: '',
+        likes: 0,
+        members: 0
+    });
     const [route, setRoute] = useState('home');
 
     const checkSignin = (status) => {
@@ -21,16 +26,22 @@ export default function HomePage() {
     }
 
     const onCreateGroup = (group) => {
-        setGroupInfo({
-            name: group.name,
-            description: group.description,
+        const newGroupInfo = {
+            name: group.group.name,
+            description: group.group.description,
             likes: 0,
             members: 1
-        });
+        };
+        console.log(newGroupInfo);
+        setGroupInfo(newGroupInfo);
         setRoute('group_page');
+        console.log("onCreateGroup", groupInfo.name , groupInfo.description)
+        console.log("information");
+        console.log(groupInfo);
+        console.log(group.group.name);
     }
-
-    
+    console.log('after running the function');
+    console.log(groupInfo);
 
     //
     const onRouteChange = (currentRoute) => {
