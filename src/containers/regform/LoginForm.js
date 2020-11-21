@@ -6,7 +6,7 @@ class LoginForm extends React.Component {
         super(props);
         this.state = {
             email: '',
-            password: ''
+            password: '',
         }
     }
 
@@ -32,7 +32,7 @@ class LoginForm extends React.Component {
             .then(user => {
                 console.log('Section #3');
                 console.log(user);
-                if (user.id) {
+                if (this.state.email) {
                     console.log('Section #4');
                     this.loadUser(user)
                     // this.props.onRouteChange('/');
