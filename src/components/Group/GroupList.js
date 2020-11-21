@@ -6,8 +6,8 @@ const GroupList = ({ groups }) => {
     const groupComponent = groups.map((user, i) => {
         return (
                 <Group
-                    id={groups[i]._id}
-                    description={groups[0].about}
+                    id={groups[i].name}
+                    description={groups[i].description}
                 />          
         );
     });
