@@ -6,9 +6,9 @@ import React from 'react';
 ////////////////////////////////////////
 
 const ProfilePage = ({ onRouteChange }) => {
-    return (
+    return(
         <div className='flexcontainer background vertical h-400'>
-            <button onClick={() => onRouteChange('create_group')} pointer>Create a Group!</button>
+            <h1>Hello !</h1>
         </div>
     );
 }

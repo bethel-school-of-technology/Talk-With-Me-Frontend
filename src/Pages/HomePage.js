@@ -16,7 +16,8 @@ import userEvent from '@testing-library/user-event';
 
 
 // This is HomePage
-export default function HomePage({ loadUser, wholeState }) {
+export default function HomePage({ loadUser, wholeState, callIn }) {
+
 
     const [isSignedIn, setIsSignedIn] = useState(false);
     const [groupInfo, setGroupInfo] = useState({
@@ -26,9 +27,9 @@ export default function HomePage({ loadUser, wholeState }) {
         members: 0
     });
     const [route, setRoute] = useState('home');
-    const [count, setCount] = useState(0);
 
    
+
 
     const onCreateGroup = (group) => {
         const newGroupInfo = {
@@ -61,16 +62,18 @@ export default function HomePage({ loadUser, wholeState }) {
                     <div className='Home'>
                         <div>
                             <Banner title={"Home"} />
-                            <h1>{wholeState.user.email}</h1>
+                            <h1>{wholeState.user.firstname}</h1>
                             <TheForm loadUser={loadUser}/>
+
+                            
                         </div>
                         <div className='flex'>
                             <div>
                                 <GroupBox signInStatus={isSignedIn} />
                             </div>
-                            <div>
-                                <ProfilePage onRouteChange={onRouteChange}/>
-                            </div>
+                        <div>
+                            {/* <ProfilePage onRouteChange={onRouteChange} wholeState={wholeState} /> */}
+                        </div>
                         </div>
                         <div>
                             <PostBox />

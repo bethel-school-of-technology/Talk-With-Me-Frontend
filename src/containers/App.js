@@ -31,7 +31,6 @@ class App extends Component {
   }
 
   onloadUser = (data) => {
-    console.log('datatateiscool');
     this.setState({
       user: {
         firstname: data.firstname,
@@ -42,6 +41,10 @@ class App extends Component {
     })
   }
 
+  callInState = () => {
+    console.log(this.state);
+  }
+
   render() {
     return (
       <Router>
@@ -50,14 +53,8 @@ class App extends Component {
           <Switch>
             <Route exact path="/">
 
-              <HomePage loadUser={this.onloadUser} wholeState={this.state} />
+              <HomePage loadUser={this.onloadUser} wholeState={this.state} callIn={this.callInState} />
             </Route>
-            <Route exact path="/profile">
-              <Profile />
-            </Route>
-
-
-
           </Switch>
         </div>
       </Router>
