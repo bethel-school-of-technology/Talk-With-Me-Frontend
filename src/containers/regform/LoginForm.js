@@ -19,7 +19,6 @@ class LoginForm extends React.Component {
     }
 
     onSubmitSignIn = () => {
-        console.log('Section #1');
         fetch('http://localhost:3000/signin', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
@@ -28,13 +27,14 @@ class LoginForm extends React.Component {
                 password: this.state.password
             })
         })
-            .then(response => {response.json(); console.log('Section #2');})
+            .then(response => response.json())
             .then(user => {
-                console.log('Section #3');
                 console.log(user);
-                if (this.state.email) {
+                console.log('tehee')
+                if (user) {
                     console.log('Section #4');
-                    this.loadUser(user)
+                    this.props.loadUser(user);
+                    console.log('user', user);
                     // this.props.onRouteChange('/');
                 }
             })

@@ -8,6 +8,7 @@ import PostBox from '../containers/PostBox';
 import CreateGroup from '../components/Group/CreateGroup';
 import ProfilePage from '../Pages/ProfilePage';
 import GroupPage from '../containers/GroupPage';
+import userEvent from '@testing-library/user-event';
 
 
 
@@ -15,7 +16,7 @@ import GroupPage from '../containers/GroupPage';
 
 
 // This is HomePage
-export default function HomePage() {
+export default function HomePage({ loadUser, wholeState }) {
 
     const [isSignedIn, setIsSignedIn] = useState(false);
     const [groupInfo, setGroupInfo] = useState({
@@ -27,20 +28,7 @@ export default function HomePage() {
     const [route, setRoute] = useState('home');
     const [count, setCount] = useState(0);
 
-    const checkSignin = (status) => {
-
-    }
-    const increaseCount = (isTrue) => {
-        if(isTrue){
-            setCount(1);
-            console.log(setCount);
-            console.log('Increased Count');
-        }
-        else {
-            setCount(0);
-            console.log('Set Count to 0');
-        }
-    }
+   
 
     const onCreateGroup = (group) => {
         const newGroupInfo = {
@@ -73,7 +61,8 @@ export default function HomePage() {
                     <div className='Home'>
                         <div>
                             <Banner title={"Home"} />
-                            <TheForm />
+                            <h1>{wholeState.user.email}</h1>
+                            <TheForm loadUser={loadUser}/>
                         </div>
                         <div className='flex'>
                             <div>

@@ -17,18 +17,21 @@ import Postspage from '../components/Posts/PostsPage'
 // Containers should be capitalized
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
+      isSignedIn: false,
       user: {
-        isSignedIn: false,
         email: '',
-        password: ''
+        password: '',
+        firstname: '',
+        lastname: ''
       }
     }
   }
 
-  loadUser = (data) => {
+  onloadUser = (data) => {
+    console.log('datatateiscool');
     this.setState({
       user: {
         firstname: data.firstname,
@@ -45,20 +48,20 @@ class App extends Component {
         <div className="App">
 
           <Switch>
-          <Route exact path="/">
-      
-            <HomePage />
-          </Route>
-          <Route exact path="/profile">
-            <Profile />
-          </Route>
+            <Route exact path="/">
+
+              <HomePage loadUser={this.onloadUser} wholeState={this.state} />
+            </Route>
+            <Route exact path="/profile">
+              <Profile />
+            </Route>
 
 
 
-        </Switch>
+          </Switch>
         </div>
       </Router>
-      
+
 
     );
   }
