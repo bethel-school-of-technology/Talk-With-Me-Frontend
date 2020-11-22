@@ -4,11 +4,11 @@ import LoginForm from './regform/LoginForm';
 
 
 
-const TheForm = () => {
+const TheForm = ({ loadUser }) => {
     return (
         <div>
             <div>
-                <LoginForm />
+                <LoginForm loadUser={loadUser}/>
             </div>
 
             <div>

@@ -17,10 +17,10 @@ function GroupBox() {
         fetch('http://localhost:3000/groups/get_all_groups')
             .then(response => response.json())
             .then(groups => { setGroups(groups.data.groups);
-                console.log('GroupBox');
-                console.log(groups.data.groups)
-                console.log('exportedgroups');
-                console.log(exportedgroups);
+                // console.log('GroupBox');
+                // console.log(groups.data.groups)
+                // console.log('exportedgroups');
+                // console.log(exportedgroups);
             });
 
         // setGroups(exportedgroups);
@@ -40,8 +40,8 @@ function GroupBox() {
         setSearchfield(event.target.value);
     }
     const filteredGroups = groups.filter(group => {
-        console.log("FilteredGroup");
-        console.log(group);
+        // console.log("FilteredGroup");
+        // console.log(group);
         return group.name?.includes(searchfield);
     });
 
