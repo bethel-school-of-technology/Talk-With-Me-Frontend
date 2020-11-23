@@ -48,11 +48,8 @@ export default function GroupPage({ groupInfo }) {
                     ?<div className='w-80'><CreatePost onRouteChange={onRouteChange} /></div>
                     : <div>
 
-                           <Post/>
-                           <Post/>
-                           <Post/>
-                           <Post/>
-                           
+                      
+                           <GroupPosts />
 
 
                         </div>)
@@ -67,12 +64,7 @@ export default function GroupPage({ groupInfo }) {
     
 })
 
-                <div>
-
-                    <div>
-
-                    </div>
-                </div>
+            
             </div>
         </div>
     )

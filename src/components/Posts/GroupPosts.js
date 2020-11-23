@@ -1,4 +1,5 @@
 import React from 'react';
+import PostBox from '../../containers/PostBox';
 
 
 
@@ -9,20 +10,22 @@ const GroupPosts = ({title, body}) => {
         // title and date next to/ above the body
 
         <div class="flex flex-column" className='tr'>
-            {/*profile picture(if needed), name, and Group name */}
+            {/* profile picture(if needed), name, and Group name
             <div className='tC bg-black-05 dib br3 pa3 ma3 shadow-5'>
                 <p>
                     Profile information
                 </p>
             </div>
-            {/* Posts. Will need a unique ID for posts */}
+            {/* Posts. Will need a unique ID for posts 
             <div className='tr w-50 bg-black-05 dib br4 pa2 ma4 shadow-5 ' >
                 <h3 className='tl' class="flex">{title}</h3>
                 <p>
              {body}
             </p>
+             </div> */}
+            <PostBox />
 
-            </div>
+           
         </div>
 
 
