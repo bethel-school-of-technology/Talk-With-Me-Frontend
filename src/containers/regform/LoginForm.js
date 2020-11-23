@@ -87,7 +87,7 @@ class LoginForm extends React.Component {
                         type='submit'
                         value='LogIn'
                     />
-                    <button onClick={this.onLogout} value='logout'>Logout</button>
+                    {/* <button onClick={this.onLogout} value='logout'>Logout</button> */}
                     <div>
                         <button onClick={() => this.props.onRouteChange('profile')}>Profile</button>
                     </div>
