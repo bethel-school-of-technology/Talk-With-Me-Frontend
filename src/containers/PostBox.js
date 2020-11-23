@@ -14,11 +14,13 @@ function PostBox() {
 
 
     useEffect(() => {
-        // fetch('../dummyGroups.json') //place holder for now
-        //     .then(response => response.json())
-        //     .then(users => { setGroups(users) });
+        fetch('http://localhost:3000/posts/get_all_posts')
+            .then(response => response.json())
+            .then(posts => { 
+                setPosts(posts.data.posts);
+            });
 
-        setPosts(exportedgroups);
+        //setPosts(exportedgroups);
 
     }, []);
 
@@ -27,7 +29,7 @@ function PostBox() {
         setSearchfield(event.target.value);
     }
     const filteredPosts = posts.filter(posts => {
-        return posts.about.includes(searchfield);
+        return posts.title?.includes(searchfield);
     });
 
     return (

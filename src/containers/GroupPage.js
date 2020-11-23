@@ -7,6 +7,9 @@ import GroupPosts from '../components/Posts/GroupPosts';
 import Group from '../components/Group/Group';
 import CreateGroup from '../components/Group/CreateGroup';
 import CreatePost from '../components/Posts/CreatePosts';
+import Post from '../components/Posts/Post';
+import PostLists from '../components/Posts/PostLists';
+
 
 
 
@@ -45,10 +48,12 @@ export default function GroupPage() {
                     ?<div className='w-80'><CreatePost onRouteChange={onRouteChange} /></div>
                     : <div>
 
-                            <GroupPosts />
-                            <GroupPosts />
-                            <GroupPosts />
-                            <GroupPosts />
+                           <Post/>
+                           <Post/>
+                           <Post/>
+                           <Post/>
+                           
+
 
                         </div>)
 

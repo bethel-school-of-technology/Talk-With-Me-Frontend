@@ -1,9 +1,10 @@
 import React from 'react';
-import Post from './Post';
+
+
 
 //This controls the Posts for PostsPage. It has different tachyon styling
 
-const GroupPosts = () => {
+const GroupPosts = ({title, body}) => {
     return (
         // title and date next to/ above the body
 
@@ -16,16 +17,9 @@ const GroupPosts = () => {
             </div>
             {/* Posts. Will need a unique ID for posts */}
             <div className='tr w-50 bg-black-05 dib br4 pa2 ma4 shadow-5 ' >
-                <h3 className='tl' class="flex">Title</h3>
+                <h3 className='tl' class="flex">{title}</h3>
                 <p>
-                    {/* Post.id */}
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Integer at ultrices risus, et interdum orci. Vivamus
-                    ullamcorper porta nisi sed malesuada. Vivamus iaculis
-                    est sed augue placerat, fringilla volutpat massa vehicula.
-                    Pellentesque ac molestie lorem, quis mollis sapien. Nam
-                    commodo enim vitae ex ullamcorper, sit amet consectetur
-                    leo convallis. Curabitur elementum nunc nec dui maximus laoreet.
+             {body}
             </p>
 
             </div>
