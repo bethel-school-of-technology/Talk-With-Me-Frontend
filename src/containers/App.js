@@ -6,12 +6,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 
-import CreateGroup from '../components/Group/CreateGroup';
 import HomePage from '../Pages/HomePage';
-import Profile from '../Pages/ProfilePage';
-import GroupPage from './GroupPage'
-import Error from '../Pages/404';
-import Postspage from '../components/Posts/PostsPage'
 
 
 // Containers should be capitalized

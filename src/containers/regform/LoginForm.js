@@ -30,7 +30,6 @@ class LoginForm extends React.Component {
             .then(response => response.json())
             .then(user => {
                 console.log(user);
-                console.log('tehee')
                 if (user) {
                     console.log('Section #4');
                     this.props.loadUser(user);
@@ -40,6 +39,25 @@ class LoginForm extends React.Component {
             })
     }
 
+    onLogout = () => {
+        fetch('http://localhost:3000/profile/logout', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                firstname: '',
+                lastname: '',
+                email: '',
+                password: ''
+            })
+        })
+            .then(response => response.json())
+            .then(user => {
+                if (!user) {
+                    console.log('User logged out');
+                    // this.props.onRouteChange('/');
+                }
+            })
+    }
 
     render() {
         return (
@@ -69,6 +87,10 @@ class LoginForm extends React.Component {
                         type='submit'
                         value='LogIn'
                     />
+                    <button onClick={this.onLogout} value='logout'>Logout</button>
+                    <div>
+                        <button onClick={() => this.props.onRouteChange('profile')}>Profile</button>
+                    </div>
             </div>
         )
     };

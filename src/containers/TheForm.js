@@ -4,11 +4,11 @@ import LoginForm from './regform/LoginForm';
 
 
 
-const TheForm = ({ loadUser }) => {
+const TheForm = ({ loadUser, onRouteChange }) => {
     return (
         <div>
             <div>
-                <LoginForm loadUser={loadUser}/>
+                <LoginForm loadUser={loadUser} onRouteChange={onRouteChange} />
             </div>
 
             <div>

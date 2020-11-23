@@ -9,7 +9,7 @@ import CreateGroup from '../components/Group/CreateGroup';
 import ProfilePage from '../Pages/ProfilePage';
 import GroupPage from '../containers/GroupPage';
 import userEvent from '@testing-library/user-event';
-
+import Error from '../Pages/404.js';
 
 
 
@@ -38,32 +38,70 @@ export default function HomePage({ loadUser, wholeState, callIn }) {
             likes: 0,
             members: 1
         };
-        console.log(newGroupInfo);
-        setGroupInfo(newGroupInfo);
-        setRoute('group_page');
-        console.log("onCreateGroup", groupInfo.name , groupInfo.description)
-        console.log("information");
-        console.log(groupInfo);
-        console.log(group.group.name);
+        // console.log(newGroupInfo);
+        // setGroupInfo(newGroupInfo);
+        // setRoute('group_page');
+        // console.log("onCreateGroup", groupInfo.name , groupInfo.description)
+        // console.log("information");
+        // console.log(groupInfo);
+        // console.log(group.group.name);
     }
     console.log('after running the function');
     console.log(groupInfo);
 
-    //
     const onRouteChange = (currentRoute) => {
         setRoute(currentRoute);
     }
-    
+    console.log(route)
     return (
         <div>
+            
+            {(() => {
+                switch(route){
+                    case 'profile':
+                        return(
+                            <div>
+                                <ProfilePage onRouteChange={onRouteChange} wholeState={wholeState.user} />
+                            </div>
+                            )
+                    case 'create_group':
+                        return(
+                            <div>
+                                <CreateGroup onRouteChange={onRouteChange} onCreateGroup={onCreateGroup}/>
+                                <GroupPage />
+                             </div>
+                            )
+                    case 'home':
+                        return (
+                            <div className='Home'>
+                            <div>
+                                <Banner title={"Home"} />
+                                <TheForm onRouteChange={onRouteChange} loadUser={loadUser}/>
+        
+                                
+                            </div>
+                            <div className='flex'>
+                                <div>
+                                    <GroupBox signInStatus={isSignedIn} />
+                                </div>
+                            </div>
+                            <div>
+                                <PostBox />
+                            </div>
+                        </div>
+                        )
+                    default: 
+                    return (<Error />)
 
-            { route === 'home'
+                }
+            })()
+        }
+            {/* { route === 'home'
                 ? (
                     <div className='Home'>
                         <div>
                             <Banner title={"Home"} />
-                            <h1>{wholeState.user.firstname}</h1>
-                            <TheForm loadUser={loadUser}/>
+                            <TheForm onRouteChange={onRouteChange} loadUser={loadUser}/>
 
                             
                         </div>
@@ -71,9 +109,6 @@ export default function HomePage({ loadUser, wholeState, callIn }) {
                             <div>
                                 <GroupBox signInStatus={isSignedIn} />
                             </div>
-                        <div>
-                            {/* <ProfilePage onRouteChange={onRouteChange} wholeState={wholeState} /> */}
-                        </div>
                         </div>
                         <div>
                             <PostBox />
@@ -88,7 +123,16 @@ export default function HomePage({ loadUser, wholeState, callIn }) {
                 )
 
 
-            }
+            } {
+                route === 'profile' ? (
+                    <div>
+                        <ProfilePage onRouteChange={onRouteChange} wholeState={wholeState.user} />
+                    </div>) 
+                    :
+                     (
+                         console.log('oops')
+                     )
+            } */}
         </div >
 
     )
