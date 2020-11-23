@@ -15,7 +15,7 @@ import PostLists from '../components/Posts/PostLists';
 
 
 // This is HomePage
-export default function GroupPage() {
+export default function GroupPage({ groupInfo }) {
 
     const [route, setRoute] = useState('welcome');
 
@@ -29,7 +29,7 @@ export default function GroupPage() {
         <div>
             <div>
                 {/* The title has to be brought from the database and display their names */}
-                <Banner title={"Group Page"} />
+                <Banner title={groupInfo.name} />
             </div>
 
             <div className='flex'>

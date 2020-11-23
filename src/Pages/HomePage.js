@@ -38,13 +38,10 @@ export default function HomePage({ loadUser, wholeState, callIn }) {
             likes: 0,
             members: 1
         };
-        // console.log(newGroupInfo);
-        // setGroupInfo(newGroupInfo);
-        // setRoute('group_page');
-        // console.log("onCreateGroup", groupInfo.name , groupInfo.description)
-        // console.log("information");
-        // console.log(groupInfo);
-        // console.log(group.group.name);
+        
+        setGroupInfo(newGroupInfo);
+        setRoute('display_group');
+        
     }
     console.log('after running the function');
     console.log(groupInfo);
@@ -68,16 +65,21 @@ export default function HomePage({ loadUser, wholeState, callIn }) {
                         return(
                             <div>
                                 <CreateGroup onRouteChange={onRouteChange} onCreateGroup={onCreateGroup}/>
-                                <GroupPage />
                              </div>
                             )
+                    case 'display_group':
+                        return (
+                            <div>
+                                <GroupPage groupInfo={groupInfo}/>
+                            </div>
+                        )
                     case 'home':
                         return (
                             <div className='Home'>
                             <div>
                                 <Banner title={"Home"} />
                                 <TheForm onRouteChange={onRouteChange} loadUser={loadUser}/>
-        
+                                <button onClick={() => onRouteChange('create_group')}>Create Group</button>
                                 
                             </div>
                             <div className='flex'>
